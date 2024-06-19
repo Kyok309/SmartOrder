@@ -233,20 +233,20 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div id="contact" className="w-full px-16 lg:px-24 py-8 bg-gray-100 flex justify-center items-center">
+      <div id="contact" className="w-full sm:px-16 lg:px-24 py-8 bg-gray-100 flex justify-center items-center">
         <div className="w-full p-4 flex flex-col gap-4 justify-between items-center lg:w-3/4 lg:flex-row lg:gap-16 lg:items-start">
 
           <div className="flex flex-col items-center lg:items-start text-gray-500">
             <div className="inline-flex items-center gap-4">
-              <FiPhone className="md:flex-shrink-0"/>
+              <FiPhone className="flex-shrink-0 text-sm sm:text-base"/>
               <a href="tel:+97677019090" target="_blank" className="text-xs md:text-base text-blue-500 visited:text-purple-500 hover:underline">7701 9090</a>
             </div>
             <div className="inline-flex items-center gap-4">
-              <FiMail className="md:flex-shrink-0"/>
+              <FiMail className="flex-shrink-0 text-sm sm:text-base"/>
               <a href="mailto:info@smartorder.mn" target="_blank" className="text-xs md:text-base text-blue-500 visited:text-purple-500 hover:underline">info@smartorder.mn</a>
             </div>
             <div className="inline-flex items-center gap-4">
-              <FaRegCopyright className="md:flex-shrink-0"/>
+              <FaRegCopyright className="flex-shrink-0 text-sm sm:text-base"/>
               <span className="text-xs md:text-base">
                 2024
                 <a href="https://smartlogic.mn/" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline"> Smart Logic LLC </a>
