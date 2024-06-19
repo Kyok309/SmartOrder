@@ -8,7 +8,7 @@ export const CardItem1 = ({ Icon, title, desc }) => {
         {Icon && <Icon className="text-sm md:text-3xl text-[#3772FF] group-hover:translate-x-6 transition ease-in-out duration-500"/>}
       </div>
       <div className="text-sm md:text-lg xl:text-xl font-semibold mb-2">{title}</div>
-      <p className="text-xs md:text-base xl:text-lg">{desc}</p>
+      <p className="text-xs md:sm xl:text-lg">{desc}</p>
     </Card>
   );
 };

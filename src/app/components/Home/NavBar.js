@@ -34,7 +34,7 @@ export const NavBar = () => {
   ]
 
   return(
-    <div className="fixed top-0 z-20 w-full flex justify-center items-center h-16 md:h-20 bg-white border-b">
+    <div className="fixed top-0 z-20 w-full flex justify-center items-center h-16 lg:h-20 bg-white border-b">
       <div className="w-4/5 h-full flex justify-between items-center">
         {/* Logo */}
         <div className="h-full flex gap-0 sm:gap-8 items-center w-full sm:w-fit">

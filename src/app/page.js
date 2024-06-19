@@ -47,7 +47,7 @@ export default function Home() {
         {/* Танилцуулга */}
         <section id="about" className="text-center w-3/4 py-12 xl:py-20 flex flex-col items-center">
           <Title title="Системийн танилцуулга"/>
-          <div className="text-xs md:text-sm xl:text-base">Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
+          <div className="w-5/6 text-xs md:text-sm xl:text-base mx-auto">Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
             хоорондын бараа бүтээгдэхүүний захиалга, хүргэлтийг автоматжуулсан B2B систем юм. Захиалагч онлайнаар бараа бүтээгдэхүүний
             захиалгыг хүссэн үедээ гар утсаар, вэб-ээр, компьютер дээрх дэсктоп програмаар үүсгэх боломжтой бөгөөд тэдгээр захиалгыг 
             Бэлтгэн нийлүүлэгч тал онлайнаар хүлээн авах, удирдах боломжтой.
@@ -87,9 +87,9 @@ export default function Home() {
 
         {/* Counter */}
         <section className="w-full py-12 xl:py-20 sm:py-40 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
-          <div className="w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
+          <div className="w-1/2 lg:w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
             <div className="flex flex-col">
-              <TbArrowsJoin2 size="48px" className="mb-4"/>
+              <TbArrowsJoin2  className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
               <Counter start={0} end={325} duration={2000} trigger={triggerRef} text="Нийлүүлэгчийн тоо"/>
             </div>
             <div className="flex flex-col">
@@ -233,7 +233,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div id="contact" className="w-full sm:px-16 lg:px-24 py-8 bg-gray-100 flex justify-center items-center">
+      <div id="contact" className="w-full px-16 lg:px-24 py-4 lg:py-8 bg-gray-100 flex justify-center items-center">
         <div className="w-full p-4 flex flex-col gap-4 justify-between items-center lg:w-3/4 lg:flex-row lg:gap-16 lg:items-start">
 
           <div className="flex flex-col items-center lg:items-start text-gray-500">
