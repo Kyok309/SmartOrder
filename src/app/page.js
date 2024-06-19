@@ -1,112 +1,282 @@
-import Image from "next/image";
+"use client";
+import React from 'react';
+import './globals.css'
+
+import { Button, Carousel } from 'antd';
+import { Counter } from './components/Counter';
+import { Break } from './components/Break';
+import { CardItem1 } from './components/CardItem1';
+import { CardItem2 } from './components/CardItem2';
+import { CardItem3 } from './components/CardItem3';
+import { NavBar } from './components/NavBar';
+
+import { Globe, Monitor, Cloud, BadgeDollarSign, Lock, MessageCircleQuestion } from 'lucide-react';
+import { GrTasks } from "react-icons/gr";
+
+
+import { FaCubes, FaFacebookF, FaTwitter, FaLinkedin, FaYoutube, FaLevelDownAlt, FaCube, FaUserPlus, FaSlidersH, FaRegClock, FaRegImage, FaGift, FaCheckCircle, FaUserTimes, FaRegMoneyBillAlt, FaCreditCard } from "react-icons/fa";
+import { MdUploadFile, MdLaptopMac } from "react-icons/md";
+
+import { TbArrowsJoin2 } from "react-icons/tb";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { PiChartLineUpBold } from "react-icons/pi";
+
+import { FiPhone, FiMail } from "react-icons/fi";
+import { FaRegCopyright } from "react-icons/fa6";
+
+import { CgWebsite } from "react-icons/cg";
+
+import clsx from 'clsx';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="bg-white">
+
+      <NavBar/>
+      {/* Content */}
+      <div className="w-full z-10 2xl:mt-20 xs:mt-16 flex flex-col items-center">
+        {/* Carousel */}
+        <section className="w-full">
+          <Carousel arrows infinite={true} autoplay arrowSize="20" className="w-full">
+            <img src="/images/car1.png"/>
+            <img src="/images/car2.png"/>
+            <img src="/images/car3.png"/>
+          </Carousel>
+        </section>
+
+        {/* Танилцуулга */}
+        <section id="about" className="text-center w-3/4 py-20 flex flex-col items-center">
+          <div className="text-2xl font-bold mt-8">Системийн танилцуулга</div>
+          <Break/>
+          <div>Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
+            хоорондын бараа бүтээгдэхүүний захиалга, хүргэлтийг автоматжуулсан B2B систем юм. Захиалагч онлайнаар бараа бүтээгдэхүүний
+            захиалгыг хүссэн үедээ гар утсаар, вэб-ээр, компьютер дээрх дэсктоп програмаар үүсгэх боломжтой бөгөөд тэдгээр захиалгыг 
+            Бэлтгэн нийлүүлэгч тал онлайнаар хүлээн авах, удирдах боломжтой.
+          </div>
+          <img src="/images/order.webp" className="mt-8"/>
+        </section>
+
+        {/* Давуу тал */}
+        <section id="features" className="w-3/4 py-20 flex flex-col items-center">
+          <div className="text-center text-2xl font-bold mt-8">Давуу тал</div>
+          <Break/>
+          {/* Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
+            <CardItem1 Icon={Globe} title="Онлайн захиалга хийх" desc="Та Smart Order системийг ашигласнаар Монгол улсад үйл ажиллагаа явуулж буй бүхий л 
+                бэлтгэн нийлүүлэгчийн барааны мэдээллүүдийг авах, захиалга хийх, 
+                хүргүүлэх боломжтой болно."/>
+            <CardItem1 Icon={Monitor} title="Хүссэн төхөөрөмжөө ашиглах" desc="Та Smart Order системийг Android, iOS аль ч үйлдлийн системтэй гар утаснаас, 
+                вэб хөтчөөр, суурин болон зөөврийн компьютераас хүссэн төхөөрөмжөөрөө 
+                ашиглан захиалга өгөх боломжтой."/>
+            <CardItem1 Icon={Cloud} title="Smart ERP - системээс захиалга өгөх" desc="Хэрвээ та Smart ERP-ийн аль нэг програмыг ашигладаг бол тухайн 
+                програм дотроосоо шууд Smart Order системийг ажиллуулж захиалга өгөх боломжтой."/>
+            <CardItem1 Icon={GrTasks} title="Байгууллага хоорондын ERP систем холболт" desc="Smart Order систем нь Smart ERP-ийн дэд системүүдтэй интеграци 
+                хийгдсэн бөгөөд Байгууллага хоорондын системүүдийг холбох дундын шийдэл болон хөгжүүлэгдсэн."/>
+            <CardItem1 Icon={FaRegMoneyBillAlt} title="Дотоод системээсээ барааны мэдээллээ удирдах" desc="Smart ERP системээс шууд барааны мэдээлэл, үнэ, хөнгөлөлт, урамшуулал, 
+                үлдэгдлийн мэдээллүүдээ илгээх, шинэчлэх боломжтой. Олон системүүд 
+                нээж ажиллах шаардлагагүй болно."/>
+            <CardItem1 Icon={FaCreditCard} title="Онлайн төлбөр, Зээлийн үйлчилгээ" desc="Smart Order систем дээр арилжааны банкнуудын онлайн төлбөр төлөлтийн холболтууд 
+                хийгдэж байгаа бөгөөд, мөн банк бус санхүүгийн байгууллагуудын зээлийн 
+                аппликейшнүүдтэй холбогдох хөгжүүлэлтүүд хийж байна."/>
+            <CardItem1 Icon={BadgeDollarSign} title="Урамшуулал, Хөнгөлөлт, Бонус" desc="Захиалга хийх бүртээ оноо цуглуулах, дараагийн захиалгадаа 
+                зарцуулах боломжуудтай бөгөөд, төрөл бүрийн хөнгөлөлт урамшуулал зарлагдана."/>
+            <CardItem1 Icon={Lock} title="Аюулгүй, Найдвартай ажиллагаа" desc="Систем нь Дата төв дээр байршуулсан тусгай сервер дээр ажилладаг 
+                учраас доголдол саатал гарахгүй, байнгын найдвартай ажиллана."/>
+            <CardItem1 Icon={MessageCircleQuestion} title="24/7 support" desc="Систем нь Дата төв дээр байршуулсан тусгай сервер дээр ажилладаг 
+                учраас доголдол саатал гарахгүй, байнгын найдвартай ажиллана."/>
+          </div>
+        </section>
+
+        {/* Counter */}
+        <section className="w-full py-40 text-white bg-[#3772FF] flex items-center justify-center">
+          <div className="w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:flex justify-between items-center">
+            <div className="flex flex-col">
+              <TbArrowsJoin2 size="48px" className="mb-4"/>
+              <Counter start={0} end={325} duration={2000}/>
+              <div>Нийлүүлэгчийн тоо</div>
+            </div>
+            <div className="flex flex-col">
+              <FaCubes size="48px" className="mb-4"/>
+              <Counter start={0} end={31158} duration={2000}/>
+              <div>Барааны тоо</div>
+            </div>
+            <div className="flex flex-col">
+              <HiOutlineUserGroup size="48px" className="mb-4"/>
+              <Counter start={0} end={17968} duration={2000}/>
+              <div>Захиалагчийн тоо</div>
+            </div>
+            <div className="flex flex-col">
+              <PiChartLineUpBold size="48px" className="mb-4"/>
+              <Counter start={0} end={1497} duration={2000}/>
+              <div>Сарын дундаж захиалга</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Нийлүүлэгч танд */}
+        <section className="w-3/4 py-20 flex flex-col items-center">
+          <div className="text-center text-2xl font-bold mt-8">Манай систем нийлүүлэгч танд</div>
+          <Break/>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+            <CardItem2 Icon={FaLevelDownAlt} title="Зардлыг бууруулна (10%-50%)" desc="Бэлтгэн нийлүүлэгч байгууллагын захиалга авах, түгээлт борлуулалт хийхтэй холбоотой 
+            явагддаг процессыг автоматжуулж, шаардлагагүй нэмэлт зардлуудыг бууруулах боломжийг олгоно."/>
+            <CardItem2 Icon={FaCube} title="Барааны дэлгэрэнгүй мэдээлэл хүргэх хялбар болно" desc="Шинээр ирсэн бараанд зориулж танилцуулга, брошур бэлтгэх, 
+            тараах материал явуулах шаардлагагүй болно. Барааны дэлгэрэнгүй мэдээллүүдээ системдээ бүртгээд бүх харилцагчид хүргэх боломжтой."/>
+            <CardItem2 Icon={FaUserPlus} title="Харилцагчийн тоо, шинэ борлуулалтын сувгууд нэмэгдэнэ" desc="Системийг ашиглаж буй бүх харилцагчид танай бараа 
+            бүтээгдэхүүний мэдээллийг цаг алдалгүй шууд авах боломжтой болно. Ингэснээр өмнө нь борлуулалт хийж байгаагүй шинэ 
+            харилцагч нар нэмэгдэх, борлуулалтын сувгаа өргөжүүлэх боломж үүснэ."/>
+            <CardItem2 Icon={FaSlidersH} title="Үйлдвэрлэл, татан авалтын хэмжээг бодитоор тооцоолно" desc="Захиалгын тоо хэмжээнд суурилсан үйлдвэрлэл, татан авалтыг 
+            хэрэгжүүлсэнээр бодит тооцоолол хийх боломжтой болох бөгөөд, үр ашиггүй зардлуудыг бууруулна."/>
+            <CardItem2 Icon={FaRegClock} title="Цаг хугацаа хэмнэнэ" desc="Онлайнаар буюу интернетээр дамжуулж захиалга хүлээн авсанаар асар их цаг хугацааг хэмнэх 
+            боломжтой юм. Тухайн өдрийн захиалгуудыг оройд нь эсвэл маргааш нэгтгэж хүлээн авах биш тэр дор нь хүлээж авах, хүргэлтэнд гаргах ч боломжтой."/>
+            <CardItem2 Icon={MdUploadFile} title="Шинэ захиалгууд автоматаар дотоод ERP систем рүү орж ирнэ" desc="Smart order систем дээр бүртгэгдсэн шинэ захиалгууд танай 
+            Smart ERP- систем дээр шууд орж ирнэ. Тусдаа бүртгэл хийх, дахин шивих зэрэг гараар хийгддэг бүх үйлдлүүд бүрмөсөн байхгүй болно."/>
+            <CardItem2 Icon={PiChartLineUpBold} title="Борлуулалт өснө" desc="Шинэ борлуулалтын суваг нэмэгдсэнээр захиалга авч чаддаггүй, алддаг байсан борлуулалтууд өөрсдөө орж 
+            ирэх болно. Ингэснээр борлуулалтын дүн болон тоо хэмжээг дээд хэмжээнд хүртэл нэмэгдүүлэх боломжтой."/>
+            <CardItem2 Icon={FaRegImage} title="Онцгой шинэ бараа, баннер сурталчилгаа хүргэнэ" desc="Захиалагчдад онцгой бараанууд, шинээр нэмэгдсэн бараануудын мэдээлэл
+             хүргэх боломжтой бөгөөд нэмэлт баннер сурталчилгаанууд байршуулах боломжтой."/>
+          </div>
+        </section>
+
+        {/* Худалдан авагч танд */}
+        <section className="p-16 bg-[#3772FF] w-full flex justify-center items-center">
+          <div className="w-3/4 flex flex-col justify-center items-center">
+            <div className="text-center text-2xl text-white font-bold mt-8">Манай систем худалдан авагч танд</div>
+            <hr className="w-24 h-1 mx-auto my-4 bg-white border-0 rounded md:mb-10 md:mt-4"/>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+              <CardItem3 Icon={FaCube} title="Барааны дэлгэрэнгүй мэдээлэл авах хялбар болно" desc="Бэлтгэн нийлүүлэгч байгууллагуудын 
+              шинэ буюу өмнө нь авч байгаагүй бараануудын дэлгэрэнгүй мэдээллийг авах нэг системээс хялбар авах боломжтой. Эндээс 
+              та бүх төрлийн бараа бүтээгдэхүүний ерөнхий мэдээлэл, орц найрлага, хэрэглэх заавар, үнэ, хөнгөлөлт урамшууллын мэдээллийг авч болно."/>
+              <CardItem3 Icon={CgWebsite} title="Бүх нийлүүлэгчийн танилцуулга, барааны мэдээллийг авна" desc="Бэлтгэн нийлүүлэгч байгууллагуудын танилцуулга, 
+              тэдгээрийн борлуулдаг бараа бүтээгдэхүүнийг хайх, шүүх, харьцуулах боломжтой болно. Ингэснээр сонголт хийх боломж нь нэмэгдэнэ."/>
+              <CardItem3 Icon={MdLaptopMac} title="Хүссэн төхөөрөмжөө ашиглан 24/7 захиалга үүсгэх" desc="Та өглөө, орой хэдийд ч байсан өөрийн завтай үедээ худалдан 
+              авалтын захиалгыг үүсгэх боломжтой. Ингэхдээ гар утаснаасаа, компьютер-с ямар ч төхөөрөмжөөр захиалгаа үүсгэх, боломжтой."/>
+              <CardItem3 Icon={FaGift} title="Урамшуулал, Хөнгөлөлтийн мэдээлэл авна" desc="Шинээр зарлагдсан хөнгөлөлт, урамшууллын мэдээллүүд таны гар 
+              утсанд шууд мэдэгдэх бөгөөд идэвхитэй явагдаж буй хөнгөлөлт урамшууллын мэдээллүүдийг ч авч болно."/>
+              <CardItem3 Icon={FaCheckCircle} title="Захиалгын төлөв хянах, удирдах боломжтой болно" desc="Өөрийн чинь захиалгыг тухайн байгууллага хүлээж авсан эсэх, 
+              хүргэхээр гаргасан эсэх, хүргэсэн эсэх бүх төлвүүдийг хянаж явах боломжтой бөгөөд цаг тухай бүрт нь танд мэдэгдэл очих болно."/>
+              <CardItem3 Icon={FaUserTimes} title="Худалдааны төлөөлөгч, Түгээгчийг хүлээх шаардлагагүй болно" desc="Захиалга өгөх гэж худалдааны төлөөлөгчийг хүлээх, 
+              утсаар олон дахин ярих шаардлагагүй болно. Та Smart Order - програм руугаа ороод л хүссэн бараагаа захиална."/>
+              <CardItem3 Icon={FaRegMoneyBillAlt} title="Зээлээр татан авалт хийх боломжууд үүснэ" desc="Smart Order системд холболт хийгдсэн байгууллагуудын зээлийн 
+              боломжуудаар худалдан авалтаа хийх боломжтой."/>
+              <CardItem3 Icon={FaCreditCard} title="Нэхэмжлэхүүдээ хянах, төлбөр төлөх боломжтой болно" desc="Захиалга үүсгээд холбоотой нэхэмжлэхээ шууд хүлээж авах боломжтой. 
+              Энэ нь автоматаар үүсэх бөгөөд таны төлбөрийг автоматаар шалгаж захиалгыг тань баталгаажуулна."/>
+            </div>
+          </div>
+        </section>
+
+        {/* Апп татах */}
+        <section className="w-full flex justify-center items-center py-24">
+          <div className="w-3/4 grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-0 place-items-center">
+            <div className="flex flex-col gap-4 font-bold text-3xl leading-relaxed lg:text-4xl">
+              Та өөрийн гар утаснаасаа SmartOrder аппликейшныг ашиглан захиалга хийж болно.
+              <div className="flex gap-4">
+                <a href="https://apps.apple.com/us/app/smart-order-mobile/id1535159480" target="_blank">
+                  <img src="/images/app-store.webp"/>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=smartlogic.ordermobile.droid" target="_blank">
+                  <img src="/images/google-play.webp"/>
+                </a>
+              </div>
+            </div>
+            <img src="/images/phone.png"/>
+          </div>
+        </section>
+
+        {/* Хамтрагч байгууллагууд */}
+        <section id="partners" className="w-full flex flex-col justify-center items-center py-20">
+          <div className="text-center text-2xl font-bold mt-8">Хамтрагч байгууллагууд</div>
+          <Break/>
+          <div className="w-3/4 grid grid-cols-3 gap-2 py-8 lg:grid-cols-4 xl:grid-cols-6">
+            <img src="/images/companies/smart-logic.webp"/>
+            <img src="/images/companies/naran-foods.webp"/>
+            <img src="/images/companies/naran-cosmetics.webp"/>
+            <img src="/images/companies/max-exim.webp"/>
+            <img src="/images/companies/v.webp"/>
+            <img src="/images/companies/bimex-holding.webp"/>
+            <img src="/images/companies/crm.webp"/>
+            <img src="/images/companies/jazar.webp"/>
+            <img src="/images/companies/gsm-group.webp"/>
+            <img src="/images/companies/max-market.webp"/>
+            <img src="/images/companies/hxt.webp"/>
+            <img src="/images/companies/snejnii.webp"/>
+            <img src="/images/companies/hvvgiin-gutal.webp"/>
+            <img src="/images/companies/tea-world.webp"/>
+            <img src="/images/companies/mcbc.webp"/>
+            <img src="/images/companies/tech-store.webp"/>
+            <img src="/images/companies/world-food.webp"/>
+            <img src="/images/companies/food-management.webp"/>
+            <img src="/images/companies/focus-point.webp"/>
+            <img src="/images/companies/unimat.webp"/>
+            <img src="/images/companies/jana-vision.webp"/>
+            <img src="/images/companies/etm.webp"/>
+            <img src="/images/companies/lupilu.webp"/>
+            <img src="/images/companies/monbakery.webp"/>
+            <img src="/images/companies/lavai.webp"/>
+            <img src="/images/companies/world-sweets.webp"/>
+            <img src="/images/companies/hvn-od.webp"/>
+            <img src="/images/companies/gelato.webp"/>
+            <img src="/images/companies/electro-complect.webp"/>
+            <img src="/images/companies/oyog-impex.webp"/>
+            <img src="/images/companies/martin-trade.webp"/>
+            <img src="/images/companies/hih.webp"/>
+            <img src="/images/companies/dorwon-olzii.webp"/>
+            <img src="/images/companies/sts-foods.webp"/>
+            <img src="/images/companies/ochir-daginas.webp"/>
+            <img src="/images/companies/vlemj-organic.webp"/>
+            <img src="/images/companies/vndsen-hvns.webp"/>
+            <img src="/images/companies/random.webp"/>
+            <img src="/images/companies/tsk-winery.webp"/>
+            <img src="/images/companies/svv-huwitsaat.webp"/>
+            <img src="/images/companies/og-family.webp"/>
+            <img src="/images/companies/hos-iweel.webp"/>
+            <img src="/images/companies/hvns-service.webp"/>
+            <img src="/images/companies/dans-dvvren.webp"/>
+            <img src="/images/companies/dugui.webp"/>
+            <img src="/images/companies/x.webp"/>
+            <img src="/images/companies/tae.webp"/>
+          </div>
+        </section>
+      </div>
+
+      {/* Footer */}
+      <div id="contact" className="w-full px-16 lg:px-24 py-8 bg-gray-100 flex justify-center items-center">
+        <div className="w-full p-4 flex flex-col gap-4 justify-between items-center lg:w-3/4 lg:flex-row lg:gap-16 lg:items-start">
+
+          <div className="flex flex-col items-center lg:items-start text-gray-500">
+            <div className="inline-flex items-center gap-4">
+              <FiPhone className="flex-shrink-0"/>
+              <a href="tel:+97677019090" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline">7701 9090</a>
+            </div>
+            <div className="inline-flex items-center gap-4">
+              <FiMail className="flex-shrink-0"/>
+              <a href="mailto:info@smartorder.mn" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline">info@smartorder.mn</a>
+            </div>
+            <div className="inline-flex items-center gap-4">
+              <FaRegCopyright className="flex-shrink-0"/>
+              <span>
+                2024
+                <a href="https://smartlogic.mn/" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline"> Smart Logic LLC </a>
+                Зохиогчийн эрхээр хамгаалагдсан.
+              </span>
+            </div>
+          </div>
+
+          <div className="flex gap-4 text-blue-500 text-xl">
+            <a href="https://www.facebook.com/smartordermn" target="_blank">
+              <FaFacebookF/>
+            </a>
+            <a href="https://x.com/smartlogicmn" target="_blank">
+              <FaTwitter/>
+            </a>
+            <a href="https://www.linkedin.com/company/smart-logic-llc" target="_blank">
+              <FaLinkedin/>
+            </a>
+            <a href="https://www.youtube.com/channel/UC7zaw-uiFL6iVJqpTQ0rE2w" target="_blank">
+              <FaYoutube/>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   );
