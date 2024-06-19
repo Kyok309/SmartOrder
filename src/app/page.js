@@ -10,12 +10,13 @@ import { CardItem2 } from './components/Home/CardItem2';
 import { CardItem3 } from './components/Home/CardItem3';
 import { NavBar } from './components/Home/NavBar';
 
-import { Globe, Monitor, Cloud, BadgeDollarSign, Lock, MessageCircleQuestion } from 'lucide-react';
+import { BsGlobe2 } from "react-icons/bs";
 import { GrTasks } from "react-icons/gr";
+import { LuBadgeDollarSign } from "react-icons/lu";
 
 
-import { FaCubes, FaFacebookF, FaTwitter, FaLinkedin, FaYoutube, FaLevelDownAlt, FaCube, FaUserPlus, FaSlidersH, FaRegClock, FaRegImage, FaGift, FaCheckCircle, FaUserTimes, FaRegMoneyBillAlt, FaCreditCard } from "react-icons/fa";
-import { MdUploadFile, MdLaptopMac } from "react-icons/md";
+import { FaCubes, FaFacebookF, FaTwitter, FaLinkedin, FaYoutube, FaLevelDownAlt, FaCube, FaUserPlus, FaSlidersH, FaRegClock, FaRegImage, FaGift, FaCheckCircle, FaUserTimes, FaRegMoneyBillAlt, FaCreditCard, FaCloud, FaLock, FaComments } from "react-icons/fa";
+import { MdUploadFile, MdLaptopMac, MdMonitor } from "react-icons/md";
 
 import { TbArrowsJoin2 } from "react-icons/tb";
 import { HiOutlineUserGroup } from "react-icons/hi";
@@ -44,9 +45,9 @@ export default function Home() {
         </section>
 
         {/* Танилцуулга */}
-        <section id="about" className="text-center w-3/4 py-20 flex flex-col items-center">
+        <section id="about" className="text-center w-3/4 py-12 xl:py-20 flex flex-col items-center">
           <Title title="Системийн танилцуулга"/>
-          <div className="text-sm sm:text-base">Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
+          <div className="text-xs md:text-sm xl:text-base">Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
             хоорондын бараа бүтээгдэхүүний захиалга, хүргэлтийг автоматжуулсан B2B систем юм. Захиалагч онлайнаар бараа бүтээгдэхүүний
             захиалгыг хүссэн үедээ гар утсаар, вэб-ээр, компьютер дээрх дэсктоп програмаар үүсгэх боломжтой бөгөөд тэдгээр захиалгыг 
             Бэлтгэн нийлүүлэгч тал онлайнаар хүлээн авах, удирдах боломжтой.
@@ -55,17 +56,17 @@ export default function Home() {
         </section>
 
         {/* Давуу тал */}
-        <section id="features" className="w-3/4 py-20 flex flex-col items-center">
+        <section id="features" className="w-3/4 py-12 xl:py-20 flex flex-col items-center">
           <Title title="Давуу тал"/>
           {/* Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
-            <CardItem1 Icon={Globe} title="Онлайн захиалга хийх" desc="Та Smart Order системийг ашигласнаар Монгол улсад үйл ажиллагаа явуулж буй бүхий л 
+            <CardItem1 Icon={BsGlobe2} title="Онлайн захиалга хийх" desc="Та Smart Order системийг ашигласнаар Монгол улсад үйл ажиллагаа явуулж буй бүхий л 
                 бэлтгэн нийлүүлэгчийн барааны мэдээллүүдийг авах, захиалга хийх, 
                 хүргүүлэх боломжтой болно."/>
-            <CardItem1 Icon={Monitor} title="Хүссэн төхөөрөмжөө ашиглах" desc="Та Smart Order системийг Android, iOS аль ч үйлдлийн системтэй гар утаснаас, 
+            <CardItem1 Icon={MdMonitor} title="Хүссэн төхөөрөмжөө ашиглах" desc="Та Smart Order системийг Android, iOS аль ч үйлдлийн системтэй гар утаснаас, 
                 вэб хөтчөөр, суурин болон зөөврийн компьютераас хүссэн төхөөрөмжөөрөө 
                 ашиглан захиалга өгөх боломжтой."/>
-            <CardItem1 Icon={Cloud} title="Smart ERP - системээс захиалга өгөх" desc="Хэрвээ та Smart ERP-ийн аль нэг програмыг ашигладаг бол тухайн 
+            <CardItem1 Icon={FaCloud} title="Smart ERP - системээс захиалга өгөх" desc="Хэрвээ та Smart ERP-ийн аль нэг програмыг ашигладаг бол тухайн 
                 програм дотроосоо шууд Smart Order системийг ажиллуулж захиалга өгөх боломжтой."/>
             <CardItem1 Icon={GrTasks} title="Байгууллага хоорондын ERP систем холболт" desc="Smart Order систем нь Smart ERP-ийн дэд системүүдтэй интеграци 
                 хийгдсэн бөгөөд Байгууллага хоорондын системүүдийг холбох дундын шийдэл болон хөгжүүлэгдсэн."/>
@@ -75,17 +76,17 @@ export default function Home() {
             <CardItem1 Icon={FaCreditCard} title="Онлайн төлбөр, Зээлийн үйлчилгээ" desc="Smart Order систем дээр арилжааны банкнуудын онлайн төлбөр төлөлтийн холболтууд 
                 хийгдэж байгаа бөгөөд, мөн банк бус санхүүгийн байгууллагуудын зээлийн 
                 аппликейшнүүдтэй холбогдох хөгжүүлэлтүүд хийж байна."/>
-            <CardItem1 Icon={BadgeDollarSign} title="Урамшуулал, Хөнгөлөлт, Бонус" desc="Захиалга хийх бүртээ оноо цуглуулах, дараагийн захиалгадаа 
+            <CardItem1 Icon={LuBadgeDollarSign} title="Урамшуулал, Хөнгөлөлт, Бонус" desc="Захиалга хийх бүртээ оноо цуглуулах, дараагийн захиалгадаа 
                 зарцуулах боломжуудтай бөгөөд, төрөл бүрийн хөнгөлөлт урамшуулал зарлагдана."/>
-            <CardItem1 Icon={Lock} title="Аюулгүй, Найдвартай ажиллагаа" desc="Систем нь Дата төв дээр байршуулсан тусгай сервер дээр ажилладаг 
+            <CardItem1 Icon={FaLock} title="Аюулгүй, Найдвартай ажиллагаа" desc="Систем нь Дата төв дээр байршуулсан тусгай сервер дээр ажилладаг 
                 учраас доголдол саатал гарахгүй, байнгын найдвартай ажиллана."/>
-            <CardItem1 Icon={MessageCircleQuestion} title="24/7 support" desc="Систем нь Дата төв дээр байршуулсан тусгай сервер дээр ажилладаг 
+            <CardItem1 Icon={FaComments} title="24/7 support" desc="Систем нь Дата төв дээр байршуулсан тусгай сервер дээр ажилладаг 
                 учраас доголдол саатал гарахгүй, байнгын найдвартай ажиллана."/>
           </div>
         </section>
 
         {/* Counter */}
-        <section className="w-full py-20 sm:py-40 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
+        <section className="w-full py-12 xl:py-20 sm:py-40 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
           <div className="w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
             <div className="flex flex-col">
               <TbArrowsJoin2 size="48px" className="mb-4"/>
@@ -107,7 +108,7 @@ export default function Home() {
         </section>
 
         {/* Нийлүүлэгч танд */}
-        <section className="w-3/4 py-20 flex flex-col items-center">
+        <section className="w-3/4 py-12 xl:py-20 flex flex-col items-center">
           <Title title="Манай систем нийлүүлэгч танд"/>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
             <CardItem2 Icon={FaLevelDownAlt} title="Зардлыг бууруулна (10%-50%)" desc="Бэлтгэн нийлүүлэгч байгууллагын захиалга авах, түгээлт борлуулалт хийхтэй холбоотой 
@@ -131,7 +132,7 @@ export default function Home() {
         </section>
 
         {/* Худалдан авагч танд */}
-        <section className="p-12 sm:p-16 bg-[#3772FF] w-full flex justify-center items-center">
+        <section className="p-12 xl:p-16 bg-[#3772FF] w-full flex justify-center items-center">
           <div className="w-full sm:w-3/4 flex flex-col justify-center items-center">
             <Title divClassName="text-white" hrClassName="bg-white" title="Манай систем худалдан авагч танд"/>
             <div className="w-full mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -157,10 +158,10 @@ export default function Home() {
         </section>
 
         {/* Апп татах */}
-        <section className="w-full flex justify-center items-center py-24">
+        <section className="w-full flex justify-center items-center py-16 xl:py-24">
           <div className="w-3/4 grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-0 place-items-center">
             <div className="flex flex-col gap-6">
-              <div className="font-bold leading-8 text-2xl sm:leading-10 sm:text-3xl lg:leading-relaxed lg:text-4xl">
+              <div className="font-bold leading-6 text-base md:leading-10 md:text-3xl lg:leading-relaxed lg:text-4xl">
                 Та өөрийн гар утаснаасаа SmartOrder аппликейшныг ашиглан захиалга хийж болно.
               </div>
               <div className="flex gap-4">
@@ -177,7 +178,7 @@ export default function Home() {
         </section>
 
         {/* Хамтрагч байгууллагууд */}
-        <section id="partners" className="w-full flex flex-col justify-center items-center py-20">
+        <section id="partners" className="w-full flex flex-col justify-center items-center py-12 xl:py-20">
           <Title title="Хамтрагч байгууллагууд"/>
           <div className="w-3/4 grid grid-cols-3 gap-2 py-8 lg:grid-cols-4 xl:grid-cols-6 place-items-center">
             <img src="/images/companies/smart-logic.webp"/>
@@ -237,16 +238,16 @@ export default function Home() {
 
           <div className="flex flex-col items-center lg:items-start text-gray-500">
             <div className="inline-flex items-center gap-4">
-              <FiPhone className="flex-shrink-0"/>
-              <a href="tel:+97677019090" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline">7701 9090</a>
+              <FiPhone className="md:flex-shrink-0"/>
+              <a href="tel:+97677019090" target="_blank" className="text-xs md:text-base text-blue-500 visited:text-purple-500 hover:underline">7701 9090</a>
             </div>
             <div className="inline-flex items-center gap-4">
-              <FiMail className="flex-shrink-0"/>
-              <a href="mailto:info@smartorder.mn" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline">info@smartorder.mn</a>
+              <FiMail className="md:flex-shrink-0"/>
+              <a href="mailto:info@smartorder.mn" target="_blank" className="text-xs md:text-base text-blue-500 visited:text-purple-500 hover:underline">info@smartorder.mn</a>
             </div>
             <div className="inline-flex items-center gap-4">
-              <FaRegCopyright className="flex-shrink-0"/>
-              <span>
+              <FaRegCopyright className="md:flex-shrink-0"/>
+              <span className="text-xs md:text-base">
                 2024
                 <a href="https://smartlogic.mn/" target="_blank" className="text-blue-500 visited:text-purple-500 hover:underline"> Smart Logic LLC </a>
                 Зохиогчийн эрхээр хамгаалагдсан.
@@ -254,7 +255,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex gap-4 text-blue-500 text-xl">
+          <div className="flex gap-4 text-blue-500 text-base md:text-lg xl:text-xl">
             <a href="https://www.facebook.com/smartordermn" target="_blank">
               <FaFacebookF/>
             </a>

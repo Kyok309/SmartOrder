@@ -34,7 +34,7 @@ export const NavBar = () => {
   ]
 
   return(
-    <div className="fixed top-0 z-20 w-full flex justify-center items-center h-16 sm:h-20 2xl:h-22 bg-white border-b">
+    <div className="fixed top-0 z-20 w-full flex justify-center items-center h-16 md:h-20 bg-white border-b">
       <div className="w-4/5 h-full flex justify-between items-center">
         {/* Logo */}
         <div className="h-full flex gap-0 sm:gap-8 items-center w-full sm:w-fit">
@@ -53,8 +53,8 @@ export const NavBar = () => {
             <div className="px-4 text-[#777777]">|</div>
           </div>
           <div className="hidden flex items-center sm:block">
-            <Button type="default" size="large" className="px-2 mx-2 sm:px-4" style={{ borderRadius: 5, fontWeight: 500 }}>Нэвтрэх</Button>
-            <Button type="primary" size="large" className="px-2 mx-2 sm:px-4" style={{ borderRadius: 5, fontWeight: 500 }}>Бүртгүүлэх</Button>
+            <Button type="default" className="px-2 mx-2 sm:px-4 h-9 md:h-10" style={{ borderRadius: 5, fontWeight: 500 }}>Нэвтрэх</Button>
+            <Button type="primary" className="px-2 mx-2 sm:px-4 h-9 md:h-10" style={{ borderRadius: 5, fontWeight: 500 }}>Бүртгүүлэх</Button>
           </div>
         </div>
 
@@ -66,8 +66,8 @@ export const NavBar = () => {
               <AiOutlineClose className="text-xl text-[#8E8E93] cursor-pointer" onClick={() => setMenu(false)}/>
             </div>
             <div className="block flex flex-col items-center sm:hidden">
-              <Button type="text" icon={<MdLogin className="text-lg"/>} className="w-64 sm:w-80 flex justify-start py-6 text-[#8E8E93]">Нэвтрэх</Button>
-              <Button type="text" icon={<MdOutlinePersonOutline className="text-lg"/>} className="w-64 sm:w-80 flex justify-start py-6 text-[#8E8E93]">Бүртгүүлэх</Button>
+              <Button type="text" icon={<MdLogin className="text-lg"/>} className="w-64 flex justify-start py-6 text-[#8E8E93]">Нэвтрэх</Button>
+              <Button type="text" icon={<MdOutlinePersonOutline className="text-lg"/>} className="w-64 flex justify-start py-6 text-[#8E8E93]">Бүртгүүлэх</Button>
             </div>
             <div className="flex flex-col items-center">
               {navLinks.map((d, i)=>(

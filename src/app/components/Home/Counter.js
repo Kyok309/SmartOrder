@@ -41,11 +41,11 @@ const Counter = ({ start, end, duration, trigger, text }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="text-2xl sm:text-4xl xl:text-6xl font-bold flex">
+      <div className="text-xl md:text-4xl xl:text-6xl font-bold flex">
         {count}
         <Plus/>
       </div>
-      <div className="text-base sm:text-lg">{text}</div>
+      <div className="text-sm md:text-base xl:text-lg">{text}</div>
     </div>
   );
 };
