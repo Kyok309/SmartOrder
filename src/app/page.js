@@ -1,10 +1,10 @@
 "use client";
-import React from 'react';
+import { React, useRef } from 'react';
 import './globals.css'
 
-import { Button, Carousel } from 'antd';
-import { Counter } from './components/Counter';
-import { Break } from './components/Break';
+import { Carousel } from 'antd';
+import Counter from './components/Counter';
+import { Header } from './components/Header';
 import { CardItem1 } from './components/CardItem1';
 import { CardItem2 } from './components/CardItem2';
 import { CardItem3 } from './components/CardItem3';
@@ -26,12 +26,12 @@ import { FaRegCopyright } from "react-icons/fa6";
 
 import { CgWebsite } from "react-icons/cg";
 
-import clsx from 'clsx';
 
 export default function Home() {
+  const triggerRef = useRef(null);
+
   return (
     <main className="bg-white">
-
       <NavBar/>
       {/* Content */}
       <div className="w-full z-10 2xl:mt-20 xs:mt-16 flex flex-col items-center">
@@ -46,9 +46,8 @@ export default function Home() {
 
         {/* Танилцуулга */}
         <section id="about" className="text-center w-3/4 py-20 flex flex-col items-center">
-          <div className="text-2xl font-bold mt-8">Системийн танилцуулга</div>
-          <Break/>
-          <div>Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
+          <Header title="Системийн танилцуулга"/>
+          <div className="text-sm sm:text-base">Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
             хоорондын бараа бүтээгдэхүүний захиалга, хүргэлтийг автоматжуулсан B2B систем юм. Захиалагч онлайнаар бараа бүтээгдэхүүний
             захиалгыг хүссэн үедээ гар утсаар, вэб-ээр, компьютер дээрх дэсктоп програмаар үүсгэх боломжтой бөгөөд тэдгээр захиалгыг 
             Бэлтгэн нийлүүлэгч тал онлайнаар хүлээн авах, удирдах боломжтой.
@@ -58,8 +57,7 @@ export default function Home() {
 
         {/* Давуу тал */}
         <section id="features" className="w-3/4 py-20 flex flex-col items-center">
-          <div className="text-center text-2xl font-bold mt-8">Давуу тал</div>
-          <Break/>
+          <Header title="Давуу тал"/>
           {/* Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
             <CardItem1 Icon={Globe} title="Онлайн захиалга хийх" desc="Та Smart Order системийг ашигласнаар Монгол улсад үйл ажиллагаа явуулж буй бүхий л 
@@ -88,35 +86,30 @@ export default function Home() {
         </section>
 
         {/* Counter */}
-        <section className="w-full py-40 text-white bg-[#3772FF] flex items-center justify-center">
-          <div className="w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:flex justify-between items-center">
+        <section className="w-full py-20 sm:py-40 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
+          <div className="w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
             <div className="flex flex-col">
               <TbArrowsJoin2 size="48px" className="mb-4"/>
-              <Counter start={0} end={325} duration={2000}/>
-              <div>Нийлүүлэгчийн тоо</div>
+              <Counter start={0} end={325} duration={2000} trigger={triggerRef} text="Нийлүүлэгчийн тоо"/>
             </div>
             <div className="flex flex-col">
               <FaCubes size="48px" className="mb-4"/>
-              <Counter start={0} end={31158} duration={2000}/>
-              <div>Барааны тоо</div>
+              <Counter start={0} end={31158} duration={2000} trigger={triggerRef} text="Барааны тоо"/>
             </div>
             <div className="flex flex-col">
               <HiOutlineUserGroup size="48px" className="mb-4"/>
-              <Counter start={0} end={17968} duration={2000}/>
-              <div>Захиалагчийн тоо</div>
+              <Counter start={0} end={17968} duration={2000} trigger={triggerRef} text="Захиалагчийн тоо"/>
             </div>
             <div className="flex flex-col">
               <PiChartLineUpBold size="48px" className="mb-4"/>
-              <Counter start={0} end={1497} duration={2000}/>
-              <div>Сарын дундаж захиалга</div>
+              <Counter start={0} end={1497} duration={2000} trigger={triggerRef} text="Сарын дундаж захиалга"/>
             </div>
           </div>
         </section>
 
         {/* Нийлүүлэгч танд */}
         <section className="w-3/4 py-20 flex flex-col items-center">
-          <div className="text-center text-2xl font-bold mt-8">Манай систем нийлүүлэгч танд</div>
-          <Break/>
+          <Header title="Манай систем нийлүүлэгч танд"/>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
             <CardItem2 Icon={FaLevelDownAlt} title="Зардлыг бууруулна (10%-50%)" desc="Бэлтгэн нийлүүлэгч байгууллагын захиалга авах, түгээлт борлуулалт хийхтэй холбоотой 
             явагддаг процессыг автоматжуулж, шаардлагагүй нэмэлт зардлуудыг бууруулах боломжийг олгоно."/>
@@ -139,10 +132,9 @@ export default function Home() {
         </section>
 
         {/* Худалдан авагч танд */}
-        <section className="p-16 bg-[#3772FF] w-full flex justify-center items-center">
-          <div className="w-3/4 flex flex-col justify-center items-center">
-            <div className="text-center text-2xl text-white font-bold mt-8">Манай систем худалдан авагч танд</div>
-            <hr className="w-24 h-1 mx-auto my-4 bg-white border-0 rounded md:mb-10 md:mt-4"/>
+        <section className="p-8 sm:p-16 bg-[#3772FF] w-full flex justify-center items-center">
+          <div className="w-full sm:w-3/4 flex flex-col justify-center items-center">
+            <Header divClassName="text-white" hrClassName="bg-white" title="Манай систем худалдан авагч танд"/>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
               <CardItem3 Icon={FaCube} title="Барааны дэлгэрэнгүй мэдээлэл авах хялбар болно" desc="Бэлтгэн нийлүүлэгч байгууллагуудын 
               шинэ буюу өмнө нь авч байгаагүй бараануудын дэлгэрэнгүй мэдээллийг авах нэг системээс хялбар авах боломжтой. Эндээс 
@@ -168,7 +160,7 @@ export default function Home() {
         {/* Апп татах */}
         <section className="w-full flex justify-center items-center py-24">
           <div className="w-3/4 grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-0 place-items-center">
-            <div className="flex flex-col gap-4 font-bold text-3xl leading-relaxed lg:text-4xl">
+            <div className="flex flex-col gap-4 font-bold text-2xl leading-relaxed lg:text-4xl sm:text-3xl">
               Та өөрийн гар утаснаасаа SmartOrder аппликейшныг ашиглан захиалга хийж болно.
               <div className="flex gap-4">
                 <a href="https://apps.apple.com/us/app/smart-order-mobile/id1535159480" target="_blank">
@@ -185,9 +177,8 @@ export default function Home() {
 
         {/* Хамтрагч байгууллагууд */}
         <section id="partners" className="w-full flex flex-col justify-center items-center py-20">
-          <div className="text-center text-2xl font-bold mt-8">Хамтрагч байгууллагууд</div>
-          <Break/>
-          <div className="w-3/4 grid grid-cols-3 gap-2 py-8 lg:grid-cols-4 xl:grid-cols-6">
+          <Header title="Хамтрагч байгууллагууд"/>
+          <div className="w-3/4 grid grid-cols-3 gap-2 py-8 lg:grid-cols-4 xl:grid-cols-6 place-items-center">
             <img src="/images/companies/smart-logic.webp"/>
             <img src="/images/companies/naran-foods.webp"/>
             <img src="/images/companies/naran-cosmetics.webp"/>

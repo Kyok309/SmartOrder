@@ -34,12 +34,12 @@ export const NavBar = () => {
   ]
 
   return(
-      <div className="fixed top-0 z-20 w-full flex justify-center items-center h-20 2xl:h-22 bg-white">
+      <div className="fixed top-0 z-20 w-full flex justify-center items-center h-16 sm:h-20 2xl:h-22 bg-white border-b">
         <div className="w-4/5 h-full flex justify-between items-center">
           {/* Logo */}
-          <div className="h-full flex gap-8 items-center">
-            <Button icon={<LuMenu className="text-3xl"/>} size="large" className="custom-btn block 2xl:hidden cursor-pointer hover:bg-gray-400 flex items-center" onClick={() => setMenu(true)}/>
-            <a href="/" className="py-4 h-full">
+          <div className="h-full flex gap-0 sm:gap-8 items-center w-full sm:w-fit">
+            <Button icon={<LuMenu className="text-xl"/>} size="medium" className="custom-btn block 2xl:hidden cursor-pointer hover:bg-gray-400 flex items-center" onClick={() => setMenu(true)}/>
+            <a href="/" className="py-4 h-full flex flex-1 justify-center sm:flex-none">
               <img src="/images/logo.png" className="h-full"/>
             </a>
           </div>
@@ -59,8 +59,8 @@ export const NavBar = () => {
           </div>
 
           {/* Responsive sidebar */}
-          <div className={clsx("fixed h-full w-screen bg-black/50 backdrop-blur-sm top-0 right-0", {"hidden":!isSideMenuOpen && "translate-x-0"})}>
-            <section className="h-screen bg-[#FFFFFF] flex flex-col absolute top-0 left-0 px-8 z-50 items-center">
+          <div className={clsx("fixed h-full w-screen top-0 right-0", {"hidden":!isSideMenuOpen})}>
+            <section className="h-screen max-w-full bg-[#FFFFFF] flex flex-col absolute top-0 left-0 px-8 z-50 items-center flex-1">
               <div className="w-80 h-20 py-4 flex justify-between">
                 <img src="/images/logo.png" className="h-full flex-1 text-center object-contain"/>
                 <AiOutlineClose className="text-xl text-[#8E8E93] cursor-pointer" onClick={() => setMenu(false)}/>
@@ -75,6 +75,7 @@ export const NavBar = () => {
                 ))}
               </div>
             </section>
+            <div className="box-content	bg-black/50 backdrop-blur-sm h-full" onClick={() => setMenu(false)}/>
           </div>
         </div>
       </div>
