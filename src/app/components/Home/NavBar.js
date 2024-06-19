@@ -60,7 +60,7 @@ export const NavBar = () => {
 
         {/* Responsive sidebar */}
         <div className={clsx("fixed h-full w-screen top-0 right-0 xl:hidden", {"hidden":!isSideMenuOpen})}>
-          <section className="h-screen max-w-full bg-[#FFFFFF] flex flex-col absolute top-0 left-0 px-8 z-50 items-center">
+          <section className="h-screen max-w-full bg-[#FFFFFF] flex flex-col absolute top-0 left-0 px-4 md:px-6 z-50 items-center">
             <div className="w-52 sm:w-72 h-16 sm:h-20 py-4 my-2 flex justify-between">
               <img src="/images/logo.png" className="h-full flex-1 text-center object-contain"/>
               <AiOutlineClose className="text-xl text-[#8E8E93] cursor-pointer" onClick={() => setMenu(false)}/>
