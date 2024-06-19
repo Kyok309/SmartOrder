@@ -3,12 +3,12 @@ import { React, useRef } from 'react';
 import './globals.css'
 
 import { Carousel } from 'antd';
-import Counter from './components/Counter';
-import { Header } from './components/Header';
-import { CardItem1 } from './components/CardItem1';
-import { CardItem2 } from './components/CardItem2';
-import { CardItem3 } from './components/CardItem3';
-import { NavBar } from './components/NavBar';
+import Counter from './components/Home/Counter';
+import { Title } from './components/Home/Title';
+import { CardItem1 } from './components/Home/CardItem1';
+import { CardItem2 } from './components/Home/CardItem2';
+import { CardItem3 } from './components/Home/CardItem3';
+import { NavBar } from './components/Home/NavBar';
 
 import { Globe, Monitor, Cloud, BadgeDollarSign, Lock, MessageCircleQuestion } from 'lucide-react';
 import { GrTasks } from "react-icons/gr";
@@ -29,7 +29,6 @@ import { CgWebsite } from "react-icons/cg";
 
 export default function Home() {
   const triggerRef = useRef(null);
-
   return (
     <main className="bg-white">
       <NavBar/>
@@ -46,7 +45,7 @@ export default function Home() {
 
         {/* Танилцуулга */}
         <section id="about" className="text-center w-3/4 py-20 flex flex-col items-center">
-          <Header title="Системийн танилцуулга"/>
+          <Title title="Системийн танилцуулга"/>
           <div className="text-sm sm:text-base">Smart Order - систем нь бөөний худалдаа эрхлэгч (бэлтгэн нийлүүлэгч тал) болон жижиглэн худалдаа эрхлэгчдийн (захиалагч тал)
             хоорондын бараа бүтээгдэхүүний захиалга, хүргэлтийг автоматжуулсан B2B систем юм. Захиалагч онлайнаар бараа бүтээгдэхүүний
             захиалгыг хүссэн үедээ гар утсаар, вэб-ээр, компьютер дээрх дэсктоп програмаар үүсгэх боломжтой бөгөөд тэдгээр захиалгыг 
@@ -57,7 +56,7 @@ export default function Home() {
 
         {/* Давуу тал */}
         <section id="features" className="w-3/4 py-20 flex flex-col items-center">
-          <Header title="Давуу тал"/>
+          <Title title="Давуу тал"/>
           {/* Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
             <CardItem1 Icon={Globe} title="Онлайн захиалга хийх" desc="Та Smart Order системийг ашигласнаар Монгол улсад үйл ажиллагаа явуулж буй бүхий л 
@@ -109,7 +108,7 @@ export default function Home() {
 
         {/* Нийлүүлэгч танд */}
         <section className="w-3/4 py-20 flex flex-col items-center">
-          <Header title="Манай систем нийлүүлэгч танд"/>
+          <Title title="Манай систем нийлүүлэгч танд"/>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
             <CardItem2 Icon={FaLevelDownAlt} title="Зардлыг бууруулна (10%-50%)" desc="Бэлтгэн нийлүүлэгч байгууллагын захиалга авах, түгээлт борлуулалт хийхтэй холбоотой 
             явагддаг процессыг автоматжуулж, шаардлагагүй нэмэлт зардлуудыг бууруулах боломжийг олгоно."/>
@@ -132,10 +131,10 @@ export default function Home() {
         </section>
 
         {/* Худалдан авагч танд */}
-        <section className="p-8 sm:p-16 bg-[#3772FF] w-full flex justify-center items-center">
+        <section className="p-12 sm:p-16 bg-[#3772FF] w-full flex justify-center items-center">
           <div className="w-full sm:w-3/4 flex flex-col justify-center items-center">
-            <Header divClassName="text-white" hrClassName="bg-white" title="Манай систем худалдан авагч танд"/>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+            <Title divClassName="text-white" hrClassName="bg-white" title="Манай систем худалдан авагч танд"/>
+            <div className="w-full mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
               <CardItem3 Icon={FaCube} title="Барааны дэлгэрэнгүй мэдээлэл авах хялбар болно" desc="Бэлтгэн нийлүүлэгч байгууллагуудын 
               шинэ буюу өмнө нь авч байгаагүй бараануудын дэлгэрэнгүй мэдээллийг авах нэг системээс хялбар авах боломжтой. Эндээс 
               та бүх төрлийн бараа бүтээгдэхүүний ерөнхий мэдээлэл, орц найрлага, хэрэглэх заавар, үнэ, хөнгөлөлт урамшууллын мэдээллийг авч болно."/>
@@ -160,8 +159,10 @@ export default function Home() {
         {/* Апп татах */}
         <section className="w-full flex justify-center items-center py-24">
           <div className="w-3/4 grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-0 place-items-center">
-            <div className="flex flex-col gap-4 font-bold text-2xl leading-relaxed lg:text-4xl sm:text-3xl">
-              Та өөрийн гар утаснаасаа SmartOrder аппликейшныг ашиглан захиалга хийж болно.
+            <div className="flex flex-col gap-6">
+              <div className="font-bold leading-8 text-2xl sm:leading-10 sm:text-3xl lg:leading-relaxed lg:text-4xl">
+                Та өөрийн гар утаснаасаа SmartOrder аппликейшныг ашиглан захиалга хийж болно.
+              </div>
               <div className="flex gap-4">
                 <a href="https://apps.apple.com/us/app/smart-order-mobile/id1535159480" target="_blank">
                   <img src="/images/app-store.webp"/>
@@ -177,7 +178,7 @@ export default function Home() {
 
         {/* Хамтрагч байгууллагууд */}
         <section id="partners" className="w-full flex flex-col justify-center items-center py-20">
-          <Header title="Хамтрагч байгууллагууд"/>
+          <Title title="Хамтрагч байгууллагууд"/>
           <div className="w-3/4 grid grid-cols-3 gap-2 py-8 lg:grid-cols-4 xl:grid-cols-6 place-items-center">
             <img src="/images/companies/smart-logic.webp"/>
             <img src="/images/companies/naran-foods.webp"/>
