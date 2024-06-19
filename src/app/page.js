@@ -32,7 +32,7 @@ export default function Home() {
   const triggerRef = useRef(null);
   return (
     <main className="bg-white">
-      <NavBar/>
+      <NavBar id="#"/>
       {/* Content */}
       <div className="w-full z-10 2xl:mt-20 xs:mt-16 flex flex-col items-center">
         {/* Carousel */}
@@ -59,7 +59,7 @@ export default function Home() {
         <section id="features" className="w-3/4 py-12 xl:py-20 flex flex-col items-center">
           <Title title="Давуу тал"/>
           {/* Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
             <CardItem1 Icon={BsGlobe2} title="Онлайн захиалга хийх" desc="Та Smart Order системийг ашигласнаар Монгол улсад үйл ажиллагаа явуулж буй бүхий л 
                 бэлтгэн нийлүүлэгчийн барааны мэдээллүүдийг авах, захиалга хийх, 
                 хүргүүлэх боломжтой болно."/>
@@ -86,22 +86,22 @@ export default function Home() {
         </section>
 
         {/* Counter */}
-        <section className="w-full py-12 xl:py-20 sm:py-40 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
-          <div className="w-1/2 lg:w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
+        <section className="w-full py-16 md:py-28 xl:py-32 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
+          <div className="w-3/5 lg:w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
             <div className="flex flex-col">
-              <TbArrowsJoin2  className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
+              <TbArrowsJoin2 className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
               <Counter start={0} end={325} duration={2000} trigger={triggerRef} text="Нийлүүлэгчийн тоо"/>
             </div>
             <div className="flex flex-col">
-              <FaCubes size="48px" className="mb-4"/>
+              <FaCubes className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
               <Counter start={0} end={31158} duration={2000} trigger={triggerRef} text="Барааны тоо"/>
             </div>
             <div className="flex flex-col">
-              <HiOutlineUserGroup size="48px" className="mb-4"/>
+              <HiOutlineUserGroup className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
               <Counter start={0} end={17968} duration={2000} trigger={triggerRef} text="Захиалагчийн тоо"/>
             </div>
             <div className="flex flex-col">
-              <PiChartLineUpBold size="48px" className="mb-4"/>
+              <PiChartLineUpBold className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
               <Counter start={0} end={1497} duration={2000} trigger={triggerRef} text="Сарын дундаж захиалга"/>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
         {/* Нийлүүлэгч танд */}
         <section className="w-3/4 py-12 xl:py-20 flex flex-col items-center">
           <Title title="Манай систем нийлүүлэгч танд"/>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             <CardItem2 Icon={FaLevelDownAlt} title="Зардлыг бууруулна (10%-50%)" desc="Бэлтгэн нийлүүлэгч байгууллагын захиалга авах, түгээлт борлуулалт хийхтэй холбоотой 
             явагддаг процессыг автоматжуулж, шаардлагагүй нэмэлт зардлуудыг бууруулах боломжийг олгоно."/>
             <CardItem2 Icon={FaCube} title="Барааны дэлгэрэнгүй мэдээлэл хүргэх хялбар болно" desc="Шинээр ирсэн бараанд зориулж танилцуулга, брошур бэлтгэх, 
@@ -132,10 +132,10 @@ export default function Home() {
         </section>
 
         {/* Худалдан авагч танд */}
-        <section className="p-12 xl:p-16 bg-[#3772FF] w-full flex justify-center items-center">
-          <div className="w-full sm:w-3/4 flex flex-col justify-center items-center">
+        <section className="py-12 lg:p-12 xl:p-16 bg-[#3772FF] w-full flex justify-center items-center">
+          <div className="w-3/4 lg:w-3/4 flex flex-col justify-center items-center">
             <Title divClassName="text-white" hrClassName="bg-white" title="Манай систем худалдан авагч танд"/>
-            <div className="w-full mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="w-full mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
               <CardItem3 Icon={FaCube} title="Барааны дэлгэрэнгүй мэдээлэл авах хялбар болно" desc="Бэлтгэн нийлүүлэгч байгууллагуудын 
               шинэ буюу өмнө нь авч байгаагүй бараануудын дэлгэрэнгүй мэдээллийг авах нэг системээс хялбар авах боломжтой. Эндээс 
               та бүх төрлийн бараа бүтээгдэхүүний ерөнхий мэдээлэл, орц найрлага, хэрэглэх заавар, үнэ, хөнгөлөлт урамшууллын мэдээллийг авч болно."/>
@@ -159,9 +159,9 @@ export default function Home() {
 
         {/* Апп татах */}
         <section className="w-full flex justify-center items-center py-16 xl:py-24">
-          <div className="w-3/4 grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-0 place-items-center">
+          <div className="w-3/4 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-0 place-items-center">
             <div className="flex flex-col gap-6">
-              <div className="font-bold leading-6 text-base md:leading-10 md:text-3xl lg:leading-relaxed lg:text-4xl">
+              <div className="font-bold leading-6 text-lg md:leading-10 md:text-2xl lg:leading-relaxed lg:text-3xl xl:text-4xl">
                 Та өөрийн гар утаснаасаа SmartOrder аппликейшныг ашиглан захиалга хийж болно.
               </div>
               <div className="flex gap-4">
@@ -233,7 +233,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <div id="contact" className="w-full px-16 lg:px-24 py-4 lg:py-8 bg-gray-100 flex justify-center items-center">
+      <div id="contact" className="w-full px-8 md:px-16 lg:px-24 py-4 lg:py-8 bg-gray-100 flex justify-center items-center">
         <div className="w-full p-4 flex flex-col gap-4 justify-between items-center lg:w-3/4 lg:flex-row lg:gap-16 lg:items-start">
 
           <div className="flex flex-col items-center lg:items-start text-gray-500">

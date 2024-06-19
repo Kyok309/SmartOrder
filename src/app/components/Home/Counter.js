@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { Plus } from "lucide-react";
+import { FaPlus } from "react-icons/fa6";
 
 const Counter = ({ start, end, duration, trigger, text }) => {
   const [count, setCount] = useState(start);
@@ -41,11 +41,11 @@ const Counter = ({ start, end, duration, trigger, text }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="text-xl md:text-4xl xl:text-6xl font-bold flex">
+      <div className="text-xl md:text-4xl xl:text-5xl font-bold flex">
         {count}
-        <Plus/>
+        <FaPlus className="text-sm sm:text-base md:text-lg xl:text-xl"/>
       </div>
-      <div className="text-sm md:text-base xl:text-lg">{text}</div>
+      <div className="text-xs sm:text-sm md:text-base xl:text-lg">{text}</div>
     </div>
   );
 };

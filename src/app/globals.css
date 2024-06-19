@@ -47,3 +47,13 @@ body {
 .custom-btn:hover {
   background-color: #E5E5EA !important;
 }
+@media screen and (max-width: 768px) {
+  .custom-button {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .custom-button {
+    font-size: 14px;
+  }
+}
