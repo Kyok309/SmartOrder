@@ -31,7 +31,7 @@ export const Header = () => {
           <div onClick={() => setMenu(true)} className="group cursor-pointer">
             <span className="block h-0.5 mb-1.5 w-6 bg-black group-hover:w-3 transitionMenu"></span>
             <span className="block h-0.5 mb-1.5 w-3 bg-black group-hover:w-5 transitionMenu"></span>
-            <span className="block h-0.5 w-6 bg-black group-hover:w-6 transitionMenu"></span>
+            <span className="block h-0.5 w-5 bg-black group-hover:w-6 transitionMenu"></span>
           </div>
         );
     };

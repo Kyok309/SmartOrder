@@ -58,6 +58,6 @@ body {
   }
 }
 .transitionMenu{
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
