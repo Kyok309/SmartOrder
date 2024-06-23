@@ -39,14 +39,14 @@ body {
 .ant-btn {
   font-family: 'Lato', sans-serif !important;
 }
-.custom-btn{
+/* .custom-btn{
   color: #575757 !important;
   border-color: transparent !important;
   background-color: #f4f4f4 !important;
 }
 .custom-btn:hover {
   background-color: #E5E5EA !important;
-}
+} */
 @media screen and (max-width: 768px) {
   .custom-button {
     font-size: 12px;
@@ -56,4 +56,8 @@ body {
   .custom-button {
     font-size: 14px;
   }
+}
+.transitionMenu{
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }

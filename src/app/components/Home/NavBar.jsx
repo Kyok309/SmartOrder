@@ -7,7 +7,7 @@ import { LuMenu } from "react-icons/lu";
 import { MdLogin, MdOutlinePersonOutline } from "react-icons/md";
 import '../../globals.css';
 
-export const NavBar = () => {
+export default function NavBar() {
   const [isSideMenuOpen, setMenu] = useState(false);
 
   const navLinks = [
@@ -39,7 +39,7 @@ export const NavBar = () => {
         {/* Logo */}
         <div className="h-full flex gap-0 sm:gap-8 items-center w-full sm:w-fit">
           <Button icon={<LuMenu className="text-xl"/>} size="medium" className="custom-btn block xl:hidden cursor-pointer hover:bg-gray-400 flex items-center" onClick={() => setMenu(true)}/>
-          <a href="/" className="py-4 pr-8 h-full flex flex-1 justify-center sm:flex-none">
+          <a href="/" className="py-4 h-full flex flex-1 justify-center sm:flex-none">
             <img src="/images/logo.png" className="h-full"/>
           </a>
         </div>
@@ -48,13 +48,13 @@ export const NavBar = () => {
         <div className="flex items-center">
           <div className="hidden xl:block xl:flex xl:items-center">
             {navLinks.map((d, i)=>(
-              <Button key={i} type="text" size="large" href={d.href} className="px-4 py-5 text-[#777777] custom-button" style={{ borderRadius: 0 }}>{d.label}</Button>
+              <Button key={i} type="text" size="large" href={d.href} className="px-4 py-6 text-[#777777] custom-button" style={{ borderRadius: 0 }}>{d.label}</Button>
             ))}
             <div className="px-4 text-[#777777]">|</div>
           </div>
           <div className="hidden flex items-center sm:block">
             <Button type="default" className="px-2.5 mx-2 2xl:px-4 h-8 lg:h-9 custom-button" style={{ borderRadius: 5, fontWeight: 500 }}>Нэвтрэх</Button>
-            <Button type="primary" className="px-2.5 mx-2 2xl:px-4 h-8 lg:h-9 custom-button" style={{ borderRadius: 5, fontWeight: 500 }}>Бүртгүүлэх</Button>
+            <Button type="primary" contentFontSize={20} className="px-2.5 mx-2 2xl:px-4 h-8 lg:h-9 custom-button" style={{ borderRadius: 5, fontWeight: 500 }}>Бүртгүүлэх</Button>
           </div>
         </div>
 

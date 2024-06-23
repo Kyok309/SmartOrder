@@ -1,5 +1,5 @@
 import '../../globals.css'
-export const Title = ({ divClassName = "", hrClassName = "", title }) => {
+const Title = ({ divClassName = "", hrClassName = "", title }) => {
   return(
     <div>
       <div className={`text-center text-base md:text-xl xl:text-2xl font-bold lato-font mt-8 ${divClassName}`}>{title}</div>
@@ -7,3 +7,4 @@ export const Title = ({ divClassName = "", hrClassName = "", title }) => {
     </div> 
   );
 };
+export default Title;

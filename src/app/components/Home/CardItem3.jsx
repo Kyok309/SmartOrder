@@ -1,7 +1,7 @@
 import { Card } from "antd"
 import '../../globals.css';
 
-export const CardItem3 = ({ Icon, title, desc }) => {
+const CardItem3 = ({ Icon, title, desc }) => {
   return(
     <Card hoverable className="group transition-shadow delay-100 ease-in-out transform hover:shadow-[0_4px_20px_0_rgba(255,255,255,1)] lato-font text-[#777777]">
       <div className="flex justify-between">
@@ -16,3 +16,4 @@ export const CardItem3 = ({ Icon, title, desc }) => {
     </Card>
   );
 };
+export default CardItem3;

@@ -4,11 +4,11 @@ import './globals.css'
 
 import { Carousel } from 'antd';
 import Counter from './components/Home/Counter';
-import { Title } from './components/Home/Title';
-import { CardItem1 } from './components/Home/CardItem1';
-import { CardItem2 } from './components/Home/CardItem2';
-import { CardItem3 } from './components/Home/CardItem3';
-import { NavBar } from './components/Home/NavBar';
+import Title from './components/Home/Title';
+import CardItem1 from './components/Home/CardItem1';
+import CardItem2 from './components/Home/CardItem2';
+import CardItem3 from './components/Home/CardItem3';
+import NavBar from './components/Home/NavBar';
 
 import { BsGlobe2 } from "react-icons/bs";
 import { GrTasks } from "react-icons/gr";
@@ -87,7 +87,7 @@ export default function Home() {
 
         {/* Counter */}
         <section className="w-full py-16 md:py-28 xl:py-32 text-white text-lg sm:text-2xl bg-[#3772FF] flex items-center justify-center" ref={triggerRef}>
-          <div className="w-3/5 gap-8 lg:gap-0 lg:w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start">
+          <div className="w-3/5 gap-8 lg:gap-0 lg:w-4/5 grid grid-cols-2 gap-8 lg:w-3/4 lg:grid-cols-4 justify-between place-items-start lg:place-items-center">
             <div className="flex flex-col">
               <TbArrowsJoin2 className="mb-4 text-4xl md:text-5xl xl:text-6xl"/>
               <Counter start={0} end={325} duration={2000} trigger={triggerRef} text="Нийлүүлэгчийн тоо"/>
