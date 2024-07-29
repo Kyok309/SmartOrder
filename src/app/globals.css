@@ -61,3 +61,14 @@ body {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
+.custom-table .ant-table-thead > tr > th {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8e8e93;
+}
+.custom-table .ant-table-thead > tr > th:first-child {
+  text-align: center;
+  text-decoration: none;
+  cursor: initial;
+}
+

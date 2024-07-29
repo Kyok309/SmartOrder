@@ -5,11 +5,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import { Button, Input, Grid, ConfigProvider } from "antd";
 import clsx from "clsx";
-import '../globals.css';
+import '../../globals.css';
 
 const { useBreakpoint } = Grid;
 
-export const Header = () => {
+export default function Header(){
     const [isSideMenuOpen, setMenu] = useState(false);
     const MenuIcon = () => {
         return (
@@ -110,23 +110,29 @@ export const Header = () => {
                 </div>
                 {/* Responsive sidebar */}
                 <div className={clsx("fixed h-full w-screen top-0 right-0", {"hidden":!isSideMenuOpen})}>
-                    <section className="h-screen max-w-full bg-[#FFFFFF] flex flex-col absolute top-0 left-0 px-6 md:px-10 z-50 items-center">
-                        <div className="w-52 sm:w-64 h-16 sm:h-20 py-4 my-2 flex justify-between">
+                    <section className="h-screen max-w-full bg-[#FFFFFF] flex flex-col absolute top-0 left-0 z-50 items-center">
+                        <div className="w-52 sm:w-64 h-16 py-2 flex items-center">
                             <AiOutlineClose className="text-xl text-[#8E8E93] cursor-pointer" onClick={() => setMenu(false)}/>
                         </div>
-                        <div className="block flex flex-col items-center sm:hidden">
-                            <Button type="text" className="w-52 sm:w-64 flex justify-start py-5 md:py-6 text-[#8E8E93] text-sm custom-button">Нэвтрэх</Button>
-                            <Button type="text" className="w-52 sm:w-64 flex justify-start py-5 md:py-6 text-[#8E8E93] text-sm custom-button">Бүртгүүлэх</Button>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            {navLinks.map((d, i)=>(
-                                <div className="flex gap-8">
-                                    <a href={d.href} className={d.label==='Захиалга' ? "w-52 sm:w-64 py-2 md:py-4 text-[#8E8E93] text-sm hover:underline text-blue-500" : "w-52 sm:w-64 py-2 md:py-4 text-[#8E8E93] text-sm hover:underline hover:text-blue-500"} onClick={() => setMenu(false)}>{d.label}</a>
+                        <div className="h-full flex flex-col">
+                            <div className="w-full bg-gray-100 flex gap-4 py-10">
+                                <IoPersonCircleOutline className="text-6xl"/>
+                                <div className="flex flex-col gap-4">
+                                    <div>Urtnasan</div>
+                                    <div>Утас: 88556273</div>
                                 </div>
-                            ))}
+                            </div>
+                            <div className="px-6 md:px-10 flex flex-col gap-6">
+                                {navLinks.map((d)=>(
+                                    <a href={d.href} className={d.label==='Захиалга' ? "w-52 sm:w-60 text-black text-sm hover:underline text-blue-500" : "w-52 sm:w-60 text-black text-sm hover:underline hover:text-blue-500"} onClick={() => setMenu(false)}>{d.label}</a>
+                                ))}
+                            </div>
+                            <div className="py-2 md:py-4 mb-8 px-6 md:px-10 sticky bottom-8">
+                                <a href="localhost:3000" className="w-52 sm:w-64 text-black text-sm hover:underline hover:text-blue-500">Гарах</a>
+                            </div>
                         </div>
                     </section>
-                    <div className="box-content	bg-black/50 backdrop-blur-sm h-full" onClick={() => setMenu(false)}/>
+                    <div className="box-content	bg-black/40 h-full" onClick={() => setMenu(false)}/>
                 </div>
             </div>
         </div>     
