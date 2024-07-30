@@ -123,7 +123,7 @@ export const Header = () => {
                             </div>
                             <div className="px-6 md:px-10 flex flex-col gap-6">
                                 {navLinks.map((d)=>(
-                                    <a href={d.href} className={d.label==='Захиалга' ? "w-52 sm:w-60 text-black text-sm hover:underline hover:text-blue-500" : "w-52 sm:w-60 text-black text-sm hover:underline hover:text-blue-500"} onClick={() => setMenu(false)}>{d.label}</a>
+                                    <a href={d.href} key={d.key} className={d.label==='Захиалга' ? "w-52 sm:w-60 text-black text-sm hover:underline hover:text-blue-500" : "w-52 sm:w-60 text-black text-sm hover:underline hover:text-blue-500"} onClick={() => setMenu(false)}>{d.label}</a>
                                 ))}
                             </div>
                             <div className="py-2 md:py-4 mb-8 px-6 md:px-10 sticky bottom-8">
