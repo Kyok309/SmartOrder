@@ -53,7 +53,7 @@ export default function NavBar() {
             <div className="px-4 text-[#777777]">|</div>
           </div>
           <div className="hidden flex items-center sm:block">
-            <Button type="default" className="px-2.5 mx-2 2xl:px-4 h-8 lg:h-9 custom-button" style={{ borderRadius: 5, fontWeight: 500 }}>Нэвтрэх</Button>
+            <Button type="default" href="/order" className="px-2.5 mx-2 2xl:px-4 h-8 lg:h-9 custom-button" style={{ borderRadius: 5, fontWeight: 500 }}>Нэвтрэх</Button>
             <Button type="primary" contentFontSize={20} className="px-2.5 mx-2 2xl:px-4 h-8 lg:h-9 custom-button" style={{ borderRadius: 5, fontWeight: 500 }}>Бүртгүүлэх</Button>
           </div>
         </div>

@@ -1,14 +1,14 @@
 "use client";
 import { React, useRef } from 'react';
-import './globals.css'
+import '../globals.css'
 
 import { Carousel } from 'antd';
-import Counter from './components/Home/Counter';
-import Title from './components/Home/Title';
-import CardItem1 from './components/Home/CardItem1';
-import CardItem2 from './components/Home/CardItem2';
-import CardItem3 from './components/Home/CardItem3';
-import NavBar from './components/Home/NavBar';
+import Counter from './_components/Counter';
+import Title from './_components/Title';
+import CardItem1 from './_components/CardItem1';
+import CardItem2 from './_components/CardItem2';
+import CardItem3 from './_components/CardItem3';
+import NavBar from './_components/NavBar';
 
 import { BsGlobe2 } from "react-icons/bs";
 import { GrTasks } from "react-icons/gr";

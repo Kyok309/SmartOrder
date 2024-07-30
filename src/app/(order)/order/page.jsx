@@ -1,10 +1,10 @@
 "use client"
 import { React } from 'react';
-import Header from '../components/Order/Header';
-import OrderTable from '../components/Order/OrderTable';
-import StateDropdown from '../components/Order/StateDropdown';
+import { Header } from '../_components/Header';
+import OrderTable from '../_components/OrderTable';
+import StateDropdown from '../_components/StateDropdown';
 import { DatePicker } from 'antd';
-import '../globals.css';
+import '../../globals.css'
 
 
 export default function Order(){
